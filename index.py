@@ -6,19 +6,15 @@ from fastapi.middleware.gzip import GZipMiddleware
 import time
 
 app = FastAPI()
-
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
-# mount static files
-app.mount("/static", StaticFiles(directory="static", html=True), name="static")
-
-# set up Jinja2 templates
-templates = Jinja2Templates(directory="templates")
-
-
-version = str(int(time.time()))  # This creates a timestamp
+# Mount static files (only need to do this once)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Set up Jinja2 templates
+templates = Jinja2Templates(directory="templates")
+
+version = str(int(time.time()))  # This creates a timestamp
 
 @app.middleware("http")
 async def add_cache_control_header(request, call_next):
@@ -29,28 +25,23 @@ async def add_cache_control_header(request, call_next):
         response.headers["Expires"] = "0"
     return response
 
-
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request, "version": version}
     )
 
-
 @app.get("/guide", response_class=HTMLResponse)
 async def guide(request: Request):
     return templates.TemplateResponse("guide.html", {"request": request})
-
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
 
-
 @app.get("/shop", response_class=HTMLResponse)
-async def contact(request: Request):
+async def shop(request: Request):
     return templates.TemplateResponse("shop.html", {"request": request})
-
 
 if __name__ == "__main__":
     import uvicorn
