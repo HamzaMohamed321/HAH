@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAH</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}?v={{ version }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+         <div class="logo"><a href="">HAH</a></div>
+         <div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/guide">Guide</a></li>
+                <!-- <li><a href="#commuinty">Commuinty</a></li> -->
+                <li><a href="/shop" class="shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+         </div>
+    </nav>
+    <!-- Home page -->
+    <section id="home-page">
+        <div class="section__text">
+            <h1 class="title1">Healthy And Happy</h1>
+            <p class="section__text__p1">
+                Healthy And Happy or (HAH) it's a productivity Notebook Not only that,If you don't have the Motivation, consistency and discipline then this notebook is for you. this notebook will help to set your goals and stick to healthy habits.And more, find out for yourself.
+            </p>
+            <div class="btn-container">
+                <button class="btn">
+                    <a href="/shop">Buy Now!</a>
+                </button>
+            </div>
+            <div id="social-container">
+                <!-- Facebook icon -->
+                <a class="social-icon" href="https://www.facebook.com/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a class="social-icon" href="https://x.com/" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a class="social-icon" href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="section__pic-container">
+            <img src="{{ url_for('static', path='assets/New Project (2).png') }}"/>
+        </div>
+        <img
+        src="{{ url_for('static', path='assets/arrow.png') }}"
+        alt="Arrow icon"
+        class="arrow"
+        onclick="location.href='./#features'"
+        />
+    </section>
+    <!-- Features section -->
+    <section id="features">
+        <h1 class="title">Features</h1>
+            <div id="slider">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <input type="radio" name="slider" id="slide4">
+                <div id="slides">
+                    <div id="overflow">
+                        <div class="inner">
+                            <div class="slide slide_1">
+                                <div class="slide-content">
+                                    <h2>Set Your Goals</h2>
+                                    <!-- <p>content</p> -->
+                                </div>
+                            </div>
+                            <div class="slide slide_2">
+                                <div class="slide-content">
+                                    <h2>Daily Reflection</h2>
+                                    <!-- <p class="section__text__p1">content</p> -->
+                                </div>
+                            </div>
+                            <div class="slide slide_3">
+                                <div class="slide-content">
+                                    <h2>Gratitude Journal</h2>
+                                    <!-- <p class="section__text__p1">content</p> -->
+                                </div>
+                            </div>
+                            <div class="slide slide_4">
+                                <div class="slide-content">
+                                    <h2>And MORE!!</h2>
+                                    <!-- <p class="section__text__p1">content</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="controls">
+                    <label for="slide1" class="prev"><i class="fas fa-chevron-left"></i></label>
+                    <label for="slide2" class="next"><i class="fas fa-chevron-right"></i></label>
+                </div>
+                <div id="bullets">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                </div>
+            </div>
+        <img
+        src="{{ url_for('static', path='assets/arrow.png') }}"
+        alt="Arrow icon"
+        class="arrow2"
+        onclick="location.href='./#project-managers'"
+        />
+    </section>
+    <!-- Project Managers section -->
+    <section id="project-managers">
+        <h1 class="title">Project managers</h1>
+        <div class="managers-container">
+            <div class="slide-wrapper">
+                <div class="card-list">
+                    <div class="card-item">
+                        <img src="/static/assets/Hamza 2.jpg" alt="Hamza" class="manager-image">
+                        <h2 class="manager-name">Hamza</h2>
+                        <p class="manager-profession">Cyber Security</p>
+                        <p class="manager-profession">Graphic Designer</p>
+                    </div>
+                    <div class="card-item">
+                        <img src="/static/assets/Angelo.jpg" alt="Angelo" class="manager-image">
+                        <h2 class="manager-name">Angelo Millad</h2>
+                        <p class="manager-profession">Embedded eng.</p>
+                        <p class="manager-profession">Presenter</p>
+                    </div>
+                    <div class="card-item">
+                        <img src="/static/assets/Hamza.png" alt="Hamza" class="manager-image">
+                        <h2 class="manager-name">Hamza Mohamed</h2>
+                        <p class="manager-profession">Data Scientist</p>
+                        <p class="manager-profession">Web Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- THE Footer -->
+    <footer>
+        <div class="social-icon">
+            <a class="social-icon" href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a class="social-icon" href="https://x.com/" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a class="social-icon" href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <ul class="nav-foot-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/guide">Guide</a></li>
+            <!-- <li><a href="#commuinty">Commuinty</a></li> -->
+            <li><a href="/shop" class="shop">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            © Copyright 2024. HAH
+        </p>
+    </footer>
+    <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>

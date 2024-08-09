@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='guide.css') }}">
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/guide">Guide</a></li>
+                <!-- <li><a href="#commuinty">Commuinty</a></li> -->
+                <li><a href="/shop" class="shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Guide page content -->
+     <div class="guide-container">
+        <aside class="sidebar">
+            <h2>Guides</h2>
+            <ul class="sidebar-nav">
+                <li>
+                    <span class="sidebar-item">Introduction</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content1">Welcome Message</a></li>
+                        <li><a href="#" data-content="content2">What is guide aboout?</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Setting Goals</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content3">The Importance of Setting Goals</a></li>
+                        <li><a href="#" data-content="content4">How to Set Goals?</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Daily Planning</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Plan Your Day</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Planning</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Tracking Progress</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Track your progress</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Tracking</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Reflection and Review</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Reflect and Review</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Reflection</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Motivation and Discipline Tips</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Reflect and Review</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Reflection</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">Additional Resources</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Reflect and Review</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Reflection</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="sidebar-item">FAQ</span>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" data-content="content5">How to Reflect and Review</a></li>
+                        <li><a href="#" data-content="content6">Tips for Effective Reflection</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main class="guide-content">
+
+        </main>
+     </div>
+    <script src="{{ url_for('static', path='guide.js') }}"></script>
+</body>
+</html>

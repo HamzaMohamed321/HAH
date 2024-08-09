@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='contact.css') }}">
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/guide">Guide</a></li>
+                <!-- <li><a href="#community">Community</a></li> -->
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Contact page content -->
+    <div class="contact-container">
+        <div class="card">
+        <h2>Contact <span>Us</span></h2>
+        <div class="row">
+            <div class="col">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text">
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text">
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email">
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel">
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="form-group">
+                <label>Message</label>
+                <textarea></textarea>
+            </div>
+            </div>
+
+            <div class="col">
+            <input type="submit" value="Submit">
+            </div>
+        </div>
+        </div>
+            </div>
+
+    <!-- <script src="{{ url_for('static', path='/static/app.js') }}"></script> -->
+</body>
+</html>
