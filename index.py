@@ -5,22 +5,22 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.gzip import GZipMiddleware
 import time
 
-hah = FastAPI()
+app = FastAPI()
 
-hah.add_middleware(GZipMiddleware, minimum_size=1000)
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # mount static files
-hah.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 # set up Jinja2 templates
 templates = Jinja2Templates(directory="templates")
 
 
 version = str(int(time.time()))  # This creates a timestamp
-hah.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@hah.middleware("http")
+@app.middleware("http")
 async def add_cache_control_header(request, call_next):
     response = await call_next(request)
     if request.url.path.startswith("/static"):
@@ -30,28 +30,28 @@ async def add_cache_control_header(request, call_next):
     return response
 
 
-@hah.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request, "version": version}
     )
 
 
-@hah.get("/guide", response_class=HTMLResponse)
+@app.get("/guide", response_class=HTMLResponse)
 async def guide(request: Request):
     return templates.TemplateResponse("guide.html", {"request": request})
 
 
-@hah.get("/contact", response_class=HTMLResponse)
+@app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
 
 
-@hah.get("/shop", response_class=HTMLResponse)
+@app.get("/shop", response_class=HTMLResponse)
 async def contact(request: Request):
     return templates.TemplateResponse("shop.html", {"request": request})
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(hah, port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
